@@ -28,6 +28,7 @@ class PostTagModel(models.Model):
 
 
 class PostModel(models.Model):
+    title = models.CharField(max_length=255, verbose_name=_('title'))
     body = RichTextUploadingField(verbose_name=_('body'))
     main_image = models.ImageField(upload_to='main_images/', verbose_name=_('main image'))
     banner = models.ImageField(upload_to='post_banners/', verbose_name=_('banner'))

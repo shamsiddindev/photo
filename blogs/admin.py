@@ -12,8 +12,8 @@ class TagModelAdmin(admin.ModelAdmin):
 
 @admin.register(PostModel)
 class PostModelAdmin(admin.ModelAdmin):
-    list_display = ['created_at']
-    list_display_links = ['created_at']
+    list_display = ['title', 'created_at']
+    list_display_links = ['title']
     list_filter = ['created_at']
     search_fields = ['body']
     autocomplete_fields = ['auther', 'tag']
