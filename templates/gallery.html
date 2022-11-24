@@ -2,24 +2,34 @@
 {% load static %}
 {% block content %}
 
-  <main id="main" data-aos="fade" data-aos-delay="1500">
+    <main id="main" data-aos="fade" data-aos-delay="1500">
 
-    <!-- ======= End Page Header ======= -->
-    <div class="page-header d-flex align-items-center">
-      <div class="container position-relative">
-        <div class="row d-flex justify-content-center">
-          <div class="col-lg-6 text-center">
-            <h2>Gallery</h2>
-            <p>Odio et unde deleniti. Deserunt numquam exercitationem. Officiis quo odio sint voluptas consequatur ut a odio voluptatem. Sit dolorum debitis veritatis natus dolores. Quasi ratione sint. Sit quaerat ipsum dolorem.</p>
+        <!-- ======= End Page Header ======= -->
+        <div class="page-header d-flex align-items-center">
+            <div class="container position-relative">
+                <div class="row d-flex justify-content-center">
+                    <div class="col-lg-6 text-center">
+{#                        {% if request.GET %}#}
+{#                            <h2>#{{ request.GET.tag }}</h2>#}
+{#                        {% else %}#}
+                            <h2>Gallery</h2>
+{#                        {% endif %}#}
+                        <p>Odio et unde deleniti. Deserunt numquam exercitationem. Officiis quo odio sint voluptas
+                            consequatur ut a odio voluptatem. Sit dolorum debitis veritatis natus dolores. Quasi ratione
+                            sint. Sit quaerat ipsum dolorem.</p>
 
-            <a class="cta-btn" href="{% url 'pages:contact' %}">Available for hire</a>
+                        <a class="cta-btn" href="{% url 'pages:contact' %}">Available for hire</a>
 
-          </div>
-        </div>
-      </div>
-    </div><!-- End Page Header -->
+                    {% if request.GET %}
+                            <h2>#{{ request.GET.tag }}</h2>
+                    {% endif %}
 
-    <!-- ======= Gallery Section ======= -->
+                    </div>
+                </div>
+            </div>
+        </div><!-- End Page Header -->
+
+        <!-- ======= Gallery Section ======= -->
         <section id="gallery" class="gallery">
             <div class="container-fluid">
 
@@ -31,7 +41,8 @@
                                 <div class="gallery-links d-flex align-items-center justify-content-center">
                                     <a href="{{ post.main_image.url }}" title="Gallery 1"
                                        class="glightbox preview-link"><i class="bi bi-arrows-angle-expand"></i></a>
-                                    <a href="{% url 'blogs:single' post.pk %}" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                                    <a href="{% url 'blogs:single' post.pk %}" class="details-link"><i
+                                            class="bi bi-link-45deg"></i></a>
                                 </div>
                             </div>
                         </div><!-- End Gallery Item -->
@@ -40,6 +51,6 @@
 
             </div>
         </section><!-- End Gallery Section -->
-  </main><!-- End #main -->
+    </main><!-- End #main -->
 
 {% endblock %}
